@@ -21,8 +21,8 @@ function Sketchpad(context)
 Sketchpad.prototype.startDrawing = function(event)
 {
 	console.log('start drawing');
-	var x = event.offsetX/this.canvas.offsetWidth;
-	var y = event.offsetY/this.canvas.offsetHeight;
+	var x = (event.clientX-event.target.offsetLeft)/this.canvas.offsetWidth;
+	var y = (event.clientY-event.target.offsetTop)/this.canvas.offsetHeight;
 	this.moveListener = this.mouseDragged.bind(this);
 	this.canvas.addEventListener('mousemove',this.moveListener);
 }
@@ -36,8 +36,8 @@ Sketchpad.prototype.stopDrawing = function(event)
 
 Sketchpad.prototype.mouseDragged = function(event)
 {
-	var x = event.offsetX;
-	var y = event.offsetY;
+	var x = (event.clientX-event.target.offsetLeft);
+	var y = (event.clientY-event.target.offsetTop);
 	if(this.lastX !== null && this.lastY !== null)
 	{
 		this.drawLine(this.lastX,this.lastY,x,y);
