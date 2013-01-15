@@ -1,0 +1,2 @@
+PORT = 1337;
+ASPECT_RATIO = 4/3;

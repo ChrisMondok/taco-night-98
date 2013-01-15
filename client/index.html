@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<script src="../common/config.js"></script>
+		<script src="client.js"></script>
+		<script src="sketchpad.js"></script>
+		<script src="ui.js"></script>
+		<link href="styles.css" rel="stylesheet">
+		<meta name="viewport" content="height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	</head>
+	<body onload="client = new DriveClient()">
+		<div id="canvasContainer">
+			<canvas id="gameCanvas"></canvas>
+		</div>
+		<div id="chat">
+		</div>
+		<div id="setup" class="setup popup hidden">
+			<div id="teamSelector" class="selector">
+				<h1>Team</h1>
+				<div class="button-group">
+					<button class="red team" id="redTeamButton">Red</button>
+					<button class="blue team" id="blueTeamButton">Blue</button>
+				</div>
+			</div>
+			<div id="roles" class="selector">
+				<h1>Role</h1>
+				<div class="button-group">
+					<button class="role" id="driveButton">Driver</button>
+					<button class="role" id="drawButton">Artist</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

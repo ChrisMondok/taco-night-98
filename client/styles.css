@@ -1,0 +1,71 @@
+body, html
+{
+	margin:0px;
+	padding:0px;
+	width:100%;
+	height:100%;
+}
+.popup
+{
+	position:absolute;
+	top:10em;
+	left:20%;
+	width:60%;
+	height:8em;
+	transition:opacity 0.5s linear;
+	opacity:1;
+	background-color:#333;
+	color:#D4D4D4;
+	display:none;
+	z-index:1000;
+}
+
+.popup.hidden
+{
+	opacity:0;
+}
+
+.popup h1
+{
+	text-align:center;
+}
+.button-group
+{
+	white-space:nowrap;
+}
+.button-group button
+{
+	margin:0px;
+	padding:0px;
+	border:0px;
+	width:50%;
+	box-sizing:border-box;
+}
+
+#canvasContainer
+{
+	background-color:blue;
+	text-align:center;
+}
+
+#gameCanvas
+{
+	background-color:black;
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-o-user-select:none;
+	user-select:none;
+}
+
+#chat
+{
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	max-height:8em;
+	overflow-y:auto;
+	max-height:8em;
+	color:white;
+	background-color:rgba(255,255,255,0.2);
+}
