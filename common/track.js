@@ -10,7 +10,17 @@ Track.prototype.addWall = function(line)
 
 Track.prototype.getCollision = function(line)
 {
-
+	var intersections = new Array();
+	for(var w in this.walls)
+	{
+		i = this.walls[w].getIntersection(line)
+		if(i)
+			intersections.push(i);
+	}
+	//TODO: return closest intersection
+	if(intersections.length)
+		return intersections[0];
+	return null;
 }
 
 function Line(x1,y1,x2,y2)
@@ -72,6 +82,11 @@ Line.prototype.getIntersection = function(otherLine)
 		return intersection;
 	else
 		return null;
+}
+
+Line.prototype.getDirection = function()
+{
+	return Math.atan2(this.points[1].y-this.points[0].y,this.points[1].x-this.points[0].x);
 }
 
 if(typeof(exports) != "undefined")

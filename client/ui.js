@@ -26,6 +26,6 @@ function addDebugMessage(message,level)
 		new Date().toLocaleTimeString()+
 		'</span> <span class="loglevel '+level+'">['+level.toUpperCase()+']</span> '+
 		message +
-		'</span>' +
+		'</span><br/>' +
 		chat.innerHTML;
 }
