@@ -37,9 +37,9 @@ car.prototype.processMovement = function(dt)
 	var newX = this.x+dt*this.velocity.x;
 	var newY = this.y+dt*this.velocity.y;
 
-	var collisionLine = new Line(this.x,this.y,newX,newY);
+	var collisionVector = new Vector(this.x,this.y,newX,newY);
 
-	if(this.track.getCollision(collisionLine))
+	if(this.track.getCollision(collisionVector))
 	{
 		alert("COLLISION!");
 	}

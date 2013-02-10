@@ -10,11 +10,11 @@ function DriveClient()
 	this.gameLoop = null;
 
 	this.track = new Track();
-	this.track.addWall(new Line(0.50,0.25,0.75,0.25));
-	this.track.addWall(new Line(0.75,0.25,0.75,0.75));
-	this.track.addWall(new Line(0.75,0.75,0.25,0.75));
-	this.track.addWall(new Line(0.25,0.75,0.25,0.50));
-	this.track.addWall(new Line(0.25,0.50,0.50,0.25));
+	this.track.addWall(new Vector(0.50,0.25,0.75,0.25));
+	this.track.addWall(new Vector(0.75,0.25,0.75,0.75));
+	this.track.addWall(new Vector(0.75,0.75,0.25,0.75));
+	this.track.addWall(new Vector(0.25,0.75,0.25,0.50));
+	this.track.addWall(new Vector(0.25,0.50,0.50,0.25));
 
 	this.tickedEntities = new Array();
 
