@@ -74,5 +74,9 @@ Line.prototype.getIntersection = function(otherLine)
 		return null;
 }
 
-exports.Track = Track;
-exports.Line = Line;
+if(typeof(exports) != "undefined")
+{
+	exports.Track = Track;
+	exports.Line = Line;
+}
+
