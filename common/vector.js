@@ -7,6 +7,21 @@ function Vector(x1,y1,x2,y2)
 	this.sortPoints();
 }
 
+Vector.fromMagnitudeAndDirection = function(magnitude,direciton)
+{
+
+}
+
+Vector.prototype.add = function(x,y)
+{
+	for(var i = 0; i < 2; i++)
+	{
+		this.points[i].x += x
+		this.points[i].y += y
+	}
+
+}
+
 Vector.prototype.sortPoints = function()
 {
 
@@ -62,6 +77,14 @@ Vector.prototype.getIntersection = function(otherVector)
 Vector.prototype.getDirection = function()
 {
 	return Math.atan2(this.points[1].y-this.points[0].y,this.points[1].x-this.points[0].x);
+}
+
+Vector.prototype.getNormal = function()
+{
+	var normal = this.getDirection() + 90;
+	while(normal < 0)
+		normal += 2*Math.PI;
+	return normal % (2*Math.PI);
 }
 
 if(typeof(exports) != "undefined")

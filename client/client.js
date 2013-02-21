@@ -70,8 +70,6 @@ DriveClient.prototype.initGameLoop = function()
 	{
 		var now = new Date();
 		var dt = (now - lastTick)/1000;
-
-		console.log("ticking "+this.tickedEntities.length+" entities.");
 		for(var e in this.tickedEntities)
 			this.tickedEntities[e].tick(dt);
 
