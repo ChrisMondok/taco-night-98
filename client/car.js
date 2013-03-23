@@ -3,7 +3,7 @@ function car()
 	this.x = 0.5;
 	this.y = 0.5;
 	this.facingDirection = 0;
-	this.velocity = {x:0.05,y:0};
+	this.velocity = {x:0.09,y:0.00};
 	this.node = document.createElement('div');
 	this.track = null;
 
@@ -39,12 +39,34 @@ car.prototype.processMovement = function(dt)
 
 	var collisionVector = new Vector(this.x,this.y,newX,newY);
 
-	if(this.track.getCollision(collisionVector))
+	var collision = this.track.getCollision(collisionVector)
+	if(collision)
 	{
-		alert("COLLISION!");
+		var distanceToMove = this.getSpeed() - Math.sqrt(Math.pow(this.x-collision.point.x,2)+Math.pow(this.y-collision.point.y,2));
+		debugger;
+		this.setDirection(2*collision.direction-this.getDirection());
+		newX = collision.point.x+distanceToMove*Math.cos(this.getDirection());
+		newY = collision.point.y+distanceToMove*Math.sin(this.getDirection());
+
 	}
 
 	this.x = newX;
 	this.y = newY;
 	this.updateNode();
+}
+
+car.prototype.getSpeed = function()
+{
+	return Math.sqrt(Math.pow(this.velocity.x,2)+Math.pow(this.velocity.y,2));
+}
+car.prototype.setDirection = function(direction)
+{
+	var speed = this.getSpeed();
+	this.velocity.x = Math.cos(direction) * speed;
+	this.velocity.y = Math.sin(direction) * speed;
+}
+
+car.prototype.getDirection = function()
+{
+	return Math.atan2(this.velocity.y,this.velocity.x);
 }

@@ -17,7 +17,8 @@ Track.prototype.getCollision = function(line)
 		if(i)
 			intersections.push({
 				point:i,
-				normal:this.walls[w].getNormal()
+				normal:this.walls[w].getNormal(),
+				direction:this.walls[w].getDirection()
 			});
 	}
 	//TODO: return closest intersection

@@ -76,7 +76,7 @@ DriveClient.prototype.initGameLoop = function()
 		lastTick = now;
 	}
 
-	this.gameLoop = setInterval(dispatchTick.bind(this),1000);
+	this.gameLoop = setInterval(dispatchTick.bind(this),50);
 }
 
 DriveClient.prototype.addTickedEntity = function(entity)

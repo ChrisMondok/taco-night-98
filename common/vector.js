@@ -81,7 +81,7 @@ Vector.prototype.getDirection = function()
 
 Vector.prototype.getNormal = function()
 {
-	var normal = this.getDirection() + 90;
+	var normal = this.getDirection() + 0.5*Math.PI;
 	while(normal < 0)
 		normal += 2*Math.PI;
 	return normal % (2*Math.PI);
